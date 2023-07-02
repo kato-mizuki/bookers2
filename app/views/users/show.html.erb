@@ -1,15 +1,5 @@
-<%= render 'books/list', book: @book %>
-<div class="col-md-8 offfset-md-1">
-  <h2>Boooks</h2>
-  <table class="table table-hover table-inverse">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Opinion</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+<div>
+  <%= flash[:notice] %>
 </div>
+<%= render 'users/list', book: @book, user: @user %>
+
