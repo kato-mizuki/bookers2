@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   def create
     @new_book = Book.new(book_params)
     @new_book.user_id = current_user.id
-    new_book.save
+    @new_book.save
     flash[:notice] = "You have created book successfully."
     redirect_to book_path(@new_book.id)
   end
