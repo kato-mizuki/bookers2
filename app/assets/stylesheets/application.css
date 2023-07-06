@@ -16,3 +16,7 @@
 .navbar-nav ml-auto{
   list-style: none;
 }
+header{
+  box-sizing:border-box;
+  display :block;
+}
