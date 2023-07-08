@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  */
-.navbar-nav ml-auto{
+.navbar-nav{
   list-style: none;
 }
+
 header{
   box-sizing:border-box;
   display :block;
