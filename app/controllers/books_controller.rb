@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+   before_action :correct_user, only: [:edit, :update]
 
   def create
     @book_new = Book.new(book_params)
