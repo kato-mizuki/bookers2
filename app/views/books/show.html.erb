@@ -18,7 +18,7 @@
            <tr>
              <th>introduction</th>
              <th><%= @user.introduction %></th>
-           </tr> 
+           </tr>
          </table>
          <br />
          <div class="row">
@@ -57,9 +57,11 @@
                         <%=  @book.body %>
                     </td>
                     <td>
+                        <% if @book.user_id == current_user.id %>
                         <a>
                           <%= link_to edit_book_path(@book.id), class: "btn btn-sm btn-success" do %>Edit
                         </a>
+                          <% end %>
                         <% end %>
                     </td>
                     <td>
