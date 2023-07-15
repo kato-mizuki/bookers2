@@ -10,11 +10,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @book = Book.new
-    @all_book = Book.all
+    @books = @user.books
   end
 
   def edit
-    is_matching_login_user
     @user = User.find(params[:id])
   end
 
@@ -34,13 +33,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-   params.require(:user).permit(:name,:image,:introduction,:title,:body)
+   params.require(:user).permit(:name,:profile_image,:introduction,:title,:body)
   end
 
   def is_matching_login_user
     @user = User.find(params[:id])
     unless @user.id == current_user.id
-      redirect_to user_path(@user.id)
+      redirect_to user_path(current_user.id)
     end
   end
 
